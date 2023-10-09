@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package api;
+
+import "cat.proto";
+
+message CatList {
+  repeated Cat items = 1;
+}

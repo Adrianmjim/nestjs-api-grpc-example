@@ -1,0 +1,8 @@
+{
+  "exclude": [
+    "dist/**/*.spec.js"
+  ],
+  "exclude-after-remap": false,
+  "sourceMap": true,
+  "cache": false
+}

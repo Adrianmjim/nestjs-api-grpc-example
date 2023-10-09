@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package api;
+
+message PaginationMeta {
+  uint32 current_page = 1;
+  uint32 item_count = 2;
+  uint32 items_per_page = 3;
+  uint32 total_items = 4;
+  uint32 total_pages = 5;
+}

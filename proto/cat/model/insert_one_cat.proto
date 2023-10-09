@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package api.cats;
+
+message InsertOneCat {
+  string born_date = 1;
+  string color = 2;
+  string name = 3;
+}

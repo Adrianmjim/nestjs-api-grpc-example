@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package api;
+
+import "google/protobuf/empty.proto";
+
+import "../model/cat.proto";
+import "../model/cat_list.proto";
+import "../model/cat_pagination.proto";
+import "../model/delete_one_cat.proto";
+import "../model/find_one_cat.proto";
+import "../model/insert_one_cat.proto";
+import "../model/paginate_find_cat.proto";
+import "../model/update_one_cat.proto";
+
+service CatService {
+  rpc DeleteOne(DeleteOneCat) returns (google.protobuf.Empty);
+  rpc FindOne(FindOneCat) returns (Cat);
+  rpc InsertOne(InsertOneCat) returns (Cat);
+  rpc InsertOneStream(stream InsertOneCat) returns (stream Cat);
+  rpc Insert(stream InsertOneCat) returns (CatList);
+  rpc PaginateFind(PaginateFindCat) returns (CatPagination);
+  rpc PaginateFindStream(stream PaginateFindCat) returns (stream CatPagination);
+  rpc UpdateOne(UpdateOneCat) returns (google.protobuf.Empty);
+  rpc Update(stream UpdateOneCat) returns (google.protobuf.Empty);
+}

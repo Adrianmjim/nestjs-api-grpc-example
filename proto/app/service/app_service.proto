@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package api;
+
+import "google/protobuf/empty.proto";
+
+import "../model/status.proto";
+
+service AppService {
+  rpc GetStatus(google.protobuf.Empty) returns (Status);
+}

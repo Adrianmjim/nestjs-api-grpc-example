@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package api.cats;
+
+message Cat {
+  string created_at = 1;
+  string born_date = 2;
+  string color = 3;
+  string id = 4;
+  string name = 5;
+  optional string updated_at = 6;
+  uint32 version = 7;
+}

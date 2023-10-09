@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package api;
+
+import public "app/service/app_service.proto";
+import public "cat/service/cat_service.proto";

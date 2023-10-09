@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "src/common/infrastructure/mikroOrm/migrations"],
+  "compilerOptions": {
+    "outDir": "./dist"
+  }
+}

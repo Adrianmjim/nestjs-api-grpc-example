@@ -1,0 +1,50 @@
+{
+  "projects": [
+    {
+      "displayName": "Integration",
+      "collectCoverageFrom": ["**/*.js"],
+      "coveragePathIgnorePatterns": [
+        "/node_modules/",
+        "/fixtures/",
+        "/model/"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "branches": 70,
+          "functions": 70,
+          "lines": 70,
+          "statements": 70
+        }
+      },
+      "moduleFileExtensions": ["ts", "js", "json"],
+      "resolver": "<rootDir>/../jest-resolver.js",
+      "rootDir": "dist",
+      "testEnvironment": "node",
+      "testMatch": ["<rootDir>/**/*.int.spec.js"],
+      "testPathIgnorePatterns": ["/node_modules"]
+    },
+    {
+      "displayName": "Unit",
+      "collectCoverageFrom": ["**/*.js"],
+      "coveragePathIgnorePatterns": [
+        "/node_modules/",
+        "/fixtures/",
+        "/model/"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "branches": 70,
+          "functions": 70,
+          "lines": 70,
+          "statements": 70
+        }
+      },
+      "moduleFileExtensions": ["ts", "js", "json"],
+      "resolver": "<rootDir>/../jest-resolver.js",
+      "rootDir": "dist",
+      "testEnvironment": "node",
+      "testMatch": ["<rootDir>/**/*.spec.js"],
+      "testPathIgnorePatterns": ["/node_modules", "\\.int.spec.js"]
+    }
+  ]
+}

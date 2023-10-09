@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package api.cats;
+
+message PaginateFindCat {
+  optional uint32 limit = 1;
+  optional uint32 page = 2;
+}
