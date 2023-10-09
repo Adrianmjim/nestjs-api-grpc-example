@@ -8,9 +8,7 @@ import { CatFindQuery } from '../query/CatFindQuery';
 
 @Injectable()
 export class FindCatManager extends FindManager<CatFindQuery, Cat> {
-  public constructor(
-    @Inject(FindCatMikroOrmAdapter) findCatMikroOrmAdapter: FindAdapter<CatFindQuery, Cat>,
-  ) {
+  public constructor(@Inject(FindCatMikroOrmAdapter) findCatMikroOrmAdapter: FindAdapter<CatFindQuery, Cat>) {
     super(findCatMikroOrmAdapter);
   }
 }
