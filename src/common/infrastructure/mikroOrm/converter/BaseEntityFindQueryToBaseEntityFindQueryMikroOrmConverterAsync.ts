@@ -30,17 +30,6 @@ export abstract class BaseEntityFindQueryToBaseEntityFindQueryMikroOrmConverterA
     return baseEntityFindQueryMikroOrm;
   }
 
-  protected setPropertyIfNotUndefined(
-    input: TInput,
-    findQueryMikroOrm: TOutput,
-    queryProperty: keyof TInput,
-    entityProperty: keyof TOutput,
-  ): void {
-    if (input[queryProperty] !== undefined) {
-      findQueryMikroOrm[entityProperty] = input[queryProperty] as unknown as TOutput[keyof TOutput];
-    }
-  }
-
   protected abstract convertToSpecificEntityFindQueryMikroOrm(
     input: TInput,
     baseEntityFindQueryMikroOrm: ObjectQuery<BaseEntityMikroOrm>,

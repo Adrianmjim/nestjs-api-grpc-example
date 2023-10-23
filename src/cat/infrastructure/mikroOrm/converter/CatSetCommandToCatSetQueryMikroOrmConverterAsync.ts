@@ -19,11 +19,17 @@ export class CatSetCommandToCatSetQueryMikroOrmConverterAsync extends BaseEntity
       ...baseEntitySetQueryMikroOrm,
     };
 
-    this.setPropertyIfNotUndefined(input, catSetQueryMikroOrm, 'bornDate', 'bornDate');
+    if (input.bornDate !== undefined) {
+      catSetQueryMikroOrm.bornDate = input.bornDate;
+    }
 
-    this.setPropertyIfNotUndefined(input, catSetQueryMikroOrm, 'color', 'color');
+    if (input.color !== undefined) {
+      catSetQueryMikroOrm.color = input.color;
+    }
 
-    this.setPropertyIfNotUndefined(input, catSetQueryMikroOrm, 'name', 'name');
+    if (input.name !== undefined) {
+      catSetQueryMikroOrm.name = input.name;
+    }
 
     return catSetQueryMikroOrm;
   }

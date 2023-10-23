@@ -15,10 +15,10 @@ export class CatFindQueryToCatFindQueryMikroOrmConverterAsync extends BaseEntity
     _input: CatFindQuery,
     baseEntityFindQueryMikroOrm: ObjectQuery<BaseEntityMikroOrm>,
   ): Promise<ObjectQuery<CatMikroOrm>> {
-    const CatFindQueryMikroOrm: ObjectQuery<CatMikroOrm> = {
+    const catFindQueryMikroOrm: ObjectQuery<CatMikroOrm> = {
       ...(baseEntityFindQueryMikroOrm as ObjectQuery<CatMikroOrm>),
     };
 
-    return CatFindQueryMikroOrm;
+    return catFindQueryMikroOrm;
   }
 }

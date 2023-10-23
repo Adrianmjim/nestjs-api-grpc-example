@@ -14,20 +14,60 @@ describe(CatSetCommandToCatSetQueryMikroOrmConverterAsync.name, () => {
   });
 
   describe('.convert()', () => {
-    describe('when called', () => {
-      let catSetCommandFixture: CatSetCommand;
-      let catSetQueryMikroOrmFixture: EntityData<CatMikroOrm>;
-      let result: unknown;
+    describe('having a CatSetCommand with bornDate', () => {
+      describe('when called', () => {
+        let catSetCommandFixture: CatSetCommand;
+        let catSetQueryMikroOrmFixture: EntityData<CatMikroOrm>;
+        let result: unknown;
 
-      beforeAll(async () => {
-        catSetCommandFixture = CatSetCommandFixtures.any;
-        catSetQueryMikroOrmFixture = CatSetQueryMikroOrmFixtures.any;
+        beforeAll(async () => {
+          catSetCommandFixture = CatSetCommandFixtures.withBornDate;
+          catSetQueryMikroOrmFixture = CatSetQueryMikroOrmFixtures.withBornDate;
 
-        result = await catSetCommandToCatSetQueryMikroOrmConverterAsync.convert(catSetCommandFixture);
+          result = await catSetCommandToCatSetQueryMikroOrmConverterAsync.convert(catSetCommandFixture);
+        });
+
+        it('should return a EntityData<CatMikroOrm>', () => {
+          expect(result).toStrictEqual(catSetQueryMikroOrmFixture);
+        });
       });
+    });
 
-      it('should return a EntityData<CatMikroOrm>', () => {
-        expect(result).toStrictEqual(catSetQueryMikroOrmFixture);
+    describe('having a CatSetCommand with color', () => {
+      describe('when called', () => {
+        let catSetCommandFixture: CatSetCommand;
+        let catSetQueryMikroOrmFixture: EntityData<CatMikroOrm>;
+        let result: unknown;
+
+        beforeAll(async () => {
+          catSetCommandFixture = CatSetCommandFixtures.withColor;
+          catSetQueryMikroOrmFixture = CatSetQueryMikroOrmFixtures.withColor;
+
+          result = await catSetCommandToCatSetQueryMikroOrmConverterAsync.convert(catSetCommandFixture);
+        });
+
+        it('should return a EntityData<CatMikroOrm>', () => {
+          expect(result).toStrictEqual(catSetQueryMikroOrmFixture);
+        });
+      });
+    });
+
+    describe('having a CatSetCommand with name', () => {
+      describe('when called', () => {
+        let catSetCommandFixture: CatSetCommand;
+        let catSetQueryMikroOrmFixture: EntityData<CatMikroOrm>;
+        let result: unknown;
+
+        beforeAll(async () => {
+          catSetCommandFixture = CatSetCommandFixtures.withName;
+          catSetQueryMikroOrmFixture = CatSetQueryMikroOrmFixtures.withName;
+
+          result = await catSetCommandToCatSetQueryMikroOrmConverterAsync.convert(catSetCommandFixture);
+        });
+
+        it('should return a EntityData<CatMikroOrm>', () => {
+          expect(result).toStrictEqual(catSetQueryMikroOrmFixture);
+        });
       });
     });
   });

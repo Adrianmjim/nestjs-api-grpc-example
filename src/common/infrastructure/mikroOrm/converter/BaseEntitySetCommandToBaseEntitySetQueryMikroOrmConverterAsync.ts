@@ -26,17 +26,6 @@ export abstract class BaseEntitySetCommandToBaseEntitySetQueryMikroOrmConverterA
     return output;
   }
 
-  protected setPropertyIfNotUndefined(
-    input: TInput,
-    setQueryMikroOrm: TOutput,
-    commandProperty: keyof TInput,
-    entityProperty: keyof TOutput,
-  ): void {
-    if (input[commandProperty] !== undefined) {
-      setQueryMikroOrm[entityProperty] = input[commandProperty] as unknown as TOutput[keyof TOutput];
-    }
-  }
-
   protected abstract convertToSpecificEntitySetQueryMikroOrm(
     input: TInput,
     baseEntitySetQueryMikroOrm: EntityData<BaseEntityMikroOrm>,
