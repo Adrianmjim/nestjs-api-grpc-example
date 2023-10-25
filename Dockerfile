@@ -1,4 +1,4 @@
-FROM node:18.16.0-alpine3.16 as build-env
+FROM node:20.2.0-alpine3.16 as build-env
 
 RUN npm -g i pnpm
 RUN mkdir /home/node/app
